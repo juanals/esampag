@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Centro de postgrados">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>ESAM POSTGRADOS</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+	<div id="fb-root"></div>
+	<!-- Load Facebook SDK for JavaScript -->
+	<script>
+		window.fbAsyncInit = function() {
+			FB.init({
+				xfbml : true,
+				version : 'v4.0'
+			});
+		};
+
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id))
+				return;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = 'https://connect.facebook.net/es_ES/sdk/xfbml.customerchat.js';
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+
+	<!-- Your customer chat code -->
+	<div class="fb-customerchat" attribution=setup_tool
+		page_id="1926281687645459" theme_color="#2054ce"
+		logged_in_greeting="Hola, ¿en que le podemos ayudar?"
+		logged_out_greeting="Gracias por visitarnos, hasta luego">
+	</div>
+	
+    <!-- ##### Preloader ##### -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+    </div>
+    
+<div id="app">
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+
+        <!-- Top Header Area -->
+        <div class="top-header">
+            <div class="container h-100">
+                <div class="row h-100">
+                    <div class="col-12 h-100">
+                        <div class="header-content h-100 d-flex align-items-center justify-content-between">
+                            <div class="academy-logo">
+                                <a href="#"><img src="img/logo_esam_principal.png" width="200" alt=""></a>
+                            </div>
+                            <div class="login-content">
+                                <a href="https://esam.edu.bo/moodle"><img src="img/icono_moodle.png" width="50" alt="" title="plataforma Moodle de ESAM"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navbar Area -->
+        <div class="academy-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="academyNav">
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="#">Inicio</a></li>
+                                    <li><a href="#postgrados">Postgrados</a>
+                                        <!-- div class="megamenu">
+                                            <ul class="single-mega cn-col-12" style="overflow:visible;">
+                                                <li v-for="(p,index) in programas"><a :href="'details.html?id='+p.id" >{{p.postgrado.nombre}}</a></li>
+                                            </ul>
+                                            <ul class="single-mega cn-col-6">
+                                                <li ><a href="#">Maestría</a></li>
+                                                <li ><a href="#">Maestría</a></li>
+                                                <li ><a href="#">Maestría</a></li>
+                                            </ul>
+                                        </div-->
+                                    </li>
+                                    <li><a href="#contact">Contacto</a></li>
+                                    <li><a href="#about">Conócenos</a></li>
+                                    <li><a href="#convenios">Convenios</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Calling Info -->
+                        <div class="">
+                            <div class="call-center classynav">
+                               <ul>
+                               <li><a href="#">{{splitsede(sedes[s].nombre)}}</a>
+                                        <ul class="dropdown">
+                                            <li><a v-for="(s,index) in sedes" v-if="index!=s" @click="cambiarsede(index)" href="#postgrados">{{splitsede(s.nombre)}}</a></li>
+                                        </ul>
+                                    </li>
+                               </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+    
+    
+    <!-- ##### Top Feature Area Start ##### 
+    <div class="top-features-area wow fadeInUp" data-wow-delay="300ms">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 offset-md-3">
+                    <div class="features-content">
+                        <div class="row no-gutters">}
+                            <div class="col-12">
+                                <div class="single-top-features d-flex align-items-center justify-content-center">
+                                    <i class="icon-agenda-1"></i>
+                                    <h5>Centro de Postgrados</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     ##### Top Feature Area End ##### -->
+    
+    <!-- ##### Top Popular Courses Area Start ##### -->
+    <div class="top-popular-courses-area section-padding-100-70">
+        <div class="container">	
+        	<!-- div class="video-container">
+    		<video  class="img-responsive" id="video"  src="img/background.mp4" type="video/mp4" muted="muted" autoplay="autoplay" loop="loop">
+			</video>
+			</div-->
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center mx-auto wow fadeInUp" data-wow-delay="300ms">
+                        <h3>NUEVOS POSTGRADOS</h3>
+                        <h5>Vea nuestras últimas ofertas en postgrados para Bolivia</h5>
+                    </div>
+                </div>
+                 
+            </div>
+            <div class="row bg-img">
+               
+                <!-- Single Top Popular Course -->
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" v-for="(p,index) in programas">
+                    <div class="card single-top-popular-course">
+					  <a :href="'details.html?id='+p.id" title="clic para ver toda la información"><img class="card-img-top" :src="'webdata/portadas/'+p.portada" alt="Card image cap" @error="repararImg"></a>
+					  <div class="card-body text-center">
+					    <p class="card-text">
+					    <b>{{p.postgrado.categoria.nombre}} - {{p.postgrado.nombre}} v{{p.version}}</b><br>
+					    Semipresencial - {{p.sede.nombre}}<br>
+					    Inicia: {{format(p.fecha_inicio)}}
+					    </p>
+					  </div>
+					</div>
+                </div>
+           </div>
+        </div>
+        <div class="container">
+           <div class="row ancla"  id="postgrados">
+                <div class="col-12">
+                    <div class="section-heading text-center mx-auto wow fadeInUp" data-wow-delay="300ms">
+                        <h3>Postgrados {{sedes[s].nombre}}</h3>
+                        <h5>Consulte todas nuestras ofertas, seleccionando la ciudad en el menú, el área y el tipo de postgrado que guste</h5>
+                    </div>
+                </div>
+                <div class="col-12">
+                	<select class="selectpicker" v-model="nuevos" @change="cargar()">
+					  <option value="true">NUEVOS POSTGRADOS</option>
+					  <option value="false">VER ANTERIORES</option>
+					</select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-lg-6 mb-2">
+               	 	<div class="btn-toolbar btn-group-toggle" data-toggle="buttons">
+					  <label v-for="(a,index) in areas" :class="['btn','btn-primary',index==0?'active':'']" @click="cambiararea(a.id)" style="border-radius:0;">
+					    <input type="radio" name="area" autocomplete="off" v-model="idarea" :value="a.id" :checked="index==0">{{a.nombre}} 
+					  </label>
+					</div>
+                </div>
+                <div class="col-xs-12 col-lg-6 mb-2">
+                    <div class="btn-toolbar btn-group-toggle" data-toggle="buttons" >
+					  <label v-for="(c,index) in categorias" :class="['btn','btn-primary',index==0?'active':'']" @click="cambiarcategoria(c.id)" style="border-radius:0;">
+					    <input type="radio" name="categoria" autocomplete="off" v-model="idcategoria" :value="c.id" :checked="index==0"> {{c.nombre}}  
+					  </label>
+					</div>
+                </div>
+            </div>
+           <div class="row">
+                <!-- Single Top Popular Course -->
+                <div class="col-12 col-md-2 col-lg-3" v-for="(p,index) in programas_sede">
+                    <div class="card single-top-popular-course">
+					  <a :href="'details.html?id='+p.id" title="clic para ver toda la información"><img class="card-img-top" :src="'webdata/portadas/'+p.portada" alt="Card image cap"  @error="repararImg"></a>
+					  <div class="card-body text-center">
+					    <p class="card-text">
+					    <b>{{p.postgrado.categoria.nombre}} - {{p.postgrado.nombre}} v{{p.version}}</b><br>
+					    Semipresencial - {{p.sede.nombre}}<br>
+					    Inicia: {{format(p.fecha_inicio)}}
+					    </p>
+					  </div>
+					</div>
+                </div>
+             </div>
+    	</div>           
+    </div>
+    <!-- ##### Top Popular Courses Area End ##### -->
+    
+    <!-- ##### CTA Area Start ##### -->
+    <div class="call-to-action-area" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                      		<div class="cta-content">
+	                        	<h3>{{sedes[s].nombre}}</h3>
+	                            <ul class="info">
+	                            	<li>
+	                                	<h5><b class="fa fa-university"></b>{{sedes[s].direccion}}</h5>
+	                                </li>
+	                                <li>
+	                                    <h5><b class="fa fa-phone"></b>{{sedes[s].telefono_fijo}}</h5>
+	                                </li>
+	                                <li>
+	                                    <h5><b class="fa fa-mobile"></b>
+	                                    <a :href="'https://api.whatsapp.com/send?phone=591'+sedes[s].telefono1+'&text=Hola,%20quisiera%20más%20información'" target="_blank" class="white underline title" style="font-size:18px" title="Envíar mensaje por Wathsapp">
+	                                    	{{sedes[s].telefono1}}<i class="icofont icofont-whatsapp"></i> </a>(Whatsapp) </h5>
+	                                	<h5><b class="fa fa-mobile"></b>
+	                                	<a :href="'https://api.whatsapp.com/send?phone=591'+sedes[s].telefono2+'&text=Hola,%20quisiera%20más%20información'" target="_blank" class="white underline title" style="font-size:18px" title="Envíar mensaje por Wathsapp">
+	                                    	{{sedes[s].telefono2}}<i class="icofont icofont-whatsapp"></i> </a>(Whatsapp) </h5>
+	                                </li>
+	                                <li>
+	                                    <h5><b class="fa fa-facebook"></b><a href="https://www.facebook.com/unsxxbolivia"> Esuela de negocios ESAM</a></h5>
+	                                </li>
+	                                <li>
+	                                    <h5><b class="fa fa-instagram"></b><a href="https://www.instagram.com/esambolivia"> ESAM Bolivia</a></h5>
+	                                </li>
+	                                <li>
+	                                    <h5><b class="fa fa-youtube"></b><a href="https://www.youtube.com/channel/UCPOdS0I1yv0gNvKyUhxKUsg"> Escuela de Negocios ESAM</a></h5>
+	                                </li>
+	                            </ul>
+	                        </div>
+	                    </div>
+	                    <div class="col-xs-12 col-md-6">
+	                    	<div class="map" id="map"></div>
+	                    </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### CTA Area End ##### -->
+    
+	<!-- ##### Testimonials Area Start ##### -->
+    <div class="testimonials-area section-padding-100 bg-img bg-overlay" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center mx-auto white wow fadeInUp" data-wow-delay="300ms">
+                        <h3>Conoce más de nosotros</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Single Testimonials Area -->
+                <div class="col-12 col-md-6">
+                    <div class="single-testimonial-area mb-100 d-flex wow fadeInUp" data-wow-delay="400ms">
+                        <div class="testimonial-thumb">
+                            <img src="img/bg-img/t1.jpg" alt="">
+                        </div>
+                        <div class="testimonial-content">
+                            <h5>Excelentes Docentes</h5>
+                            <p>Buena calidad académica de Docentes reconocidos a nivel Nacional</p>
+                            <h6><span>Pablo Cuba</span> Estudiante</h6>
+                        </div>
+                    </div>
+                    <div class="single-testimonial-area mb-100 d-flex wow fadeInUp" data-wow-delay="400ms">
+                        <div class="testimonial-thumb">
+                            <img src="img/bg-img/t1.jpg" alt="">
+                        </div>
+                        <div class="testimonial-content">
+                            <h5>Buena atención</h5>
+                            <p>Información oportuna y muchas comodidades en los horarios y pagos, atención personalizada.</p>
+                            <h6><span>Sandra Arenas</span> Estudiante</h6>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Testimonials Area -->
+                <div class="col-12 col-md-6">
+                	<div class="fb-like text-center"
+						data-href="https://www.facebook.com/unsxxbolivia" data-width=""
+						data-layout="button_count" data-action="like" data-size="large"
+						data-show-faces="true" data-share="true"></div> 
+                    <div class="fb-page"
+						data-href="https://www.facebook.com/unsxxbolivia"
+						data-tabs="timeline" data-width="" data-height=""
+						data-small-header="false" data-adapt-container-width="true"
+						data-hide-cover="false" data-show-facepile="true">
+						<blockquote cite="https://www.facebook.com/unsxxbolivia "
+							class=" fb-xfbml-parse-ignore ">
+							<a href="https://www.facebook.com/unsxxbolivia"> Escuela de
+							Negocios - Universidad Nacional Siglo XX - Bolivia </a>
+						</blockquote>
+					</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                   <h3 class="white">Generando experiencias...</h3>
+                </div>
+            </div>
+            <div class="gallery">
+				<a v-for="g in galeria" :href="'webdata/galeria/'+g.foto"><img :src="'webdata/galeria/thumbs/'+g.foto" :alt="g.descripcion" :title="g.descripcion" width="180" height="180"/></a>
+			</div>
+        </div>
+    </div>
+    <!-- ##### Testimonials Area End ##### -->
+
+    <!-- ##### Course Area Start ##### -->
+    <div class="academy-courses-area section-padding-100-0"  id="convenios">
+        <div class="container">
+        	<div class="row mb-3">
+        		<div  class="col-md-12 text-center"><h3>Nuestros Convenios</h3></div>
+        	</div>
+            <div class="row">
+                <!-- Single Course Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="mr-3">
+                            <img src="img/logo_unsxx.png" width="80">
+                        </div>
+                        <div class="course-content">
+                            <a href="http://unsxx.edu.bo/"><h4>UNSXX</h4></a>
+                            <p>Postgrados certificados por la Universidad Nacional Siglo XX</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Course Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="400ms">
+                        <div class="mr-3">
+                            <img src="img/logo_fdpt.png" width="100">
+                        </div>
+                        <div class="course-content">
+                            <a href="https://www.facebook.com/FederacionDepartamentaldeProfesionalesTarija"><h4>FDPT</h4></a>
+                            <p>Convenio con la Federación de Profesionales de Tarija</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Course Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-course-area d-flex align-items-center mb-100 wow fadeInUp" data-wow-delay="500ms">
+                        <div class="mr-3">
+                            <img src="img/logo_ceub.png" width="80">
+                        </div>
+                        <div class="course-content">
+                            <a href="http://www.ceub.edu.bo/"><h4>CEUB</h4></a>
+                            <p>Nuestros postgrados son avalados por la CEUB</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- ##### Course Area End ##### -->
+
+    <!-- ##### Partner Area Start ##### -->
+    <div class="partner-area section-padding-0-100">
+        <div class="container">
+        	<div class="row mb-3">
+        		<div  class="col-md-12 text-center"><h3>Nuestra corporación</h3></div>
+        	</div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="partners-logo d-flex align-items-center justify-content-between flex-wrap">
+                        <a href="https://www.esamfc.com/"><img src="img/logo_fc.png" alt=""></a>
+                        <a href="https://www.cca.edu.bo/"><img src="img/logo_cca.png" alt=""></a>
+                        <a href="https://www.cybercorp.com.bo/"><img src="img/logo_cybercorp.png" alt=""></a>
+                        <a href="https://ciberkidstarija.wixsite.com/website"><img src="img/logo_ciberkids.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Partner Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+        <div class="bottom-footer-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="white"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							Copyright &copy;<script>document.write(new Date().getFullYear());</script> Desarrollado por ESAM
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+
+</div>
+
+    <!-- ##### All Javascript Script ##### -->
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/simple-lightbox.min.js"></script>
+	<script src="js/moment.min.js"></script>
+	<script src="js/moment-es.js"></script>
+	<script src="js/vue.js"></script>
+	<script src="js/axios.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/index.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOAO9oWWZN1fOVHBaWP1vHAnTfU4zRV4Q"></script>
+	<script async defer crossorigin="anónimo" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0"></script>
+</body>
+
+</html>
